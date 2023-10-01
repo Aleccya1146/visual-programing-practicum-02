@@ -1,38 +1,41 @@
-// NIM - Your Name
-main()
-{
-    // Deklarasi variabel
-    int a, b, c;
-    // Input
-    System.out.print("Masukkan nilai a: ");
-    a = baca.nextInt();
-    System.out.print("Masukkan nilai b: ");
-    b = baca.nextInt();
-    System.out.print("Masukkan nilai c: ");
-    c = baca.nextInt();
-    // Proses
-    if (a > b)
-    {
-        if (a > c)
-        {
-            System.out.println("Nilai a terbesar");
+// 12S23002 - Fernando Alexander Silitonga
+import java.util.*;
+import java.lang.Math;
+
+class P02_01 {
+    private static Scanner input = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        double x;
+        String program, kode, matkul, dosen, tanggal, format, status, s;
+        int kesulitan, hari;
+
+        program = input.nextLine();
+        kode = input.nextLine();
+        matkul = input.nextLine();
+        dosen = input.nextLine();
+        tanggal = input.nextLine();
+        format = input.nextLine();
+        kesulitan = input.nextInt();
+        hari = input.nextInt();
+        status = input.nextLine();
+        x = kesulitan * (1.0 / hari);
+        if (x > 3) {
+            s = "tugas ini memiliki prioritas penting";
+        } else {
+            if (x < 3 && x > 1.5) {
+                s = "tugas ini memiliki prioritas menengah";
+            } else {
+                if (x < 1.5) {
+                    s = "tugas ini memiliki prioritas ringan";
+                }
+            }
         }
-        else
-        {
-            System.out.println("Nilai c terbesar");
-        }
+        System.out.println("Prioritas: " + toFixed(x,2));
+        System.out.println(program + "|" + kode + "|" + matkul + "|" + dosen + "|" + tanggal + "|" + format + "|" + status + "|" + s);
     }
-    else
-    {
-        if (b > c)
-        {
-            System.out.println("Nilai b terbesar");
-        }
-        else
-        {
-            System.out.println("Nilai c terbesar");
-        }
+    
+    private static String toFixed(double value, int digits) {
+        return String.format("%." + digits + "f", value);
     }
-    // Output
 }
-```
