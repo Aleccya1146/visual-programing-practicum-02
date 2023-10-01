@@ -1,6 +1,6 @@
 //12S23002 - Fernando Alexander Silitonga
 import java.util.*;
-import java.lang.Math;
+import java.lang.Math; 
 
 class P02_02 {
     private static Scanner input = new Scanner(System.in);
